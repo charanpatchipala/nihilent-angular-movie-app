@@ -1,0 +1,11 @@
+.profiles{
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap:10px
+}
+img{
+    border-radius: 50%;
+    height: 130px;
+    aspect-ratio: 1/1;
+}
