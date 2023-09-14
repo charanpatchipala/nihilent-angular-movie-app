@@ -4,7 +4,11 @@ body {
     min-height: 100vh;
 }
 
- 
+ .moviecontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ }
 
 
 .moviecard {
@@ -13,6 +17,7 @@ body {
     border-radius: 30px;
     background-color: whitesmoke;
     width: 20rem;
+    height: 40rem;
     overflow: hidden;
 }
 

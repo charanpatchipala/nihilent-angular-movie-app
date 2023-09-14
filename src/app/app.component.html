@@ -14,13 +14,32 @@
   [src]="profile.src"
 >
 </app-task1-angular> -->
+<div class="input">
+  <input
+    type="text"
+    [(ngModel)]="newMovie.src"
+    placeholder="Poster URL"
+    required
+  />
+  <input
+    type="text"
+    [(ngModel)]="newMovie.moviename"
+    placeholder="Movie Name"
+    required
+  />
+  <input type="text" [(ngModel)]="newMovie.rating" placeholder="Rating" />
+  <textarea [(ngModel)]="newMovie.content" placeholder="Description"></textarea>
+  <button (click)="addMovie()">Add movie</button>
+</div>
 <div class="container">
   <app-task2-angular
-    *ngFor="let movie of movies"
+    *ngFor="let movie of movies; let i = index"
     [src]="movie.src"
     [moviename]="movie.moviename"
     [rating]="movie.rating"
     [content]="movie.content"
+    [idx]="i"
+    (Mindex)="deleteMovie($event)"
   >
   </app-task2-angular>
 </div>
@@ -55,4 +74,6 @@
   ></app-task2-angular>
 </section> -->
 
-<app-counter></app-counter>
+<!-- <app-counter></app-counter> -->
+
+<app-forms></app-forms>
