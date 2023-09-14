@@ -16,4 +16,12 @@ export class Task2AngularComponent {
   delMovie() {
     this.Mindex.emit(this.idx);
   }
+
+  showResult() {
+    let showLess = true;
+  }
+
+  hideResult() {
+    let showLess = false;
+  }
 }

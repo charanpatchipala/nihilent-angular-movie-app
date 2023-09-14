@@ -1,12 +1,33 @@
 <div class="likecounter">
-  <button (click)="increment()">Like 👍{{ count }}</button>
-  <button (click)="decrement()">Dislike 👎{{ dcount }}</button>
-  <progress
+  <!-- 
+  <button
+    class="likebutton"
+    mat-raised-button
+    (click)="increment()"
+    color="primary"
+    matBadge="{{ count }}"
+    matBadgePosition="before"
+    matBadgeColor="accent"
+  >
+    👍
+  </button> -->
+
+  <!-- <button (click)="increment()">Like 👍{{ count }}</button> -->
+  <!-- <button (click)="decrement()">Dislike 👎{{ dcount }}</button> -->
+  <span class="reaction">
+    <mat-icon matBadge="{{ count }}" matBadgeColor="warn">
+      <button class="rxn" (click)="increment()">👍</button></mat-icon
+    >
+    <mat-icon matBadge="{{ dcount }}" matBadgeColor="warn">
+      <button class="rxn" (click)="decrement()">👎</button></mat-icon
+    >
+  </span>
+  <!-- <progress
     type="range"
     min="0"
     max="{{ count + dcount }}"
     value="{{ count }}"
-  ></progress>
+  ></progress> -->
   <!-- <h2 *ngIf="count - dcount >= 10">Your are awesome</h2> -->
   <h2 *ngIf="tcount">Your are awesome</h2>
 </div>

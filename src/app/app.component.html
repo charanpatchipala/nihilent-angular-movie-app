@@ -15,21 +15,59 @@
 >
 </app-task1-angular> -->
 <div class="input">
-  <input
+  <!-- <input
+    matInput
     type="text"
     [(ngModel)]="newMovie.src"
     placeholder="Poster URL"
     required
-  />
-  <input
+  /> -->
+  <!-- <mat-form-field>
+    <mat-label>Poster</mat-label>
+    <input matInput placeholder="poster" [(ngModel)]="newMovie.src" />
+  </mat-form-field> -->
+  <!-- <input
+    matInput
     type="text"
     [(ngModel)]="newMovie.moviename"
     placeholder="Movie Name"
     required
-  />
-  <input type="text" [(ngModel)]="newMovie.rating" placeholder="Rating" />
-  <textarea [(ngModel)]="newMovie.content" placeholder="Description"></textarea>
-  <button (click)="addMovie()">Add movie</button>
+  /> -->
+  <!-- <mat-form-field>
+    <mat-label>Movie Name</mat-label>
+    <input matInput placeholder="Movie name" [(ngModel)]="newMovie.moviename" />
+  </mat-form-field> -->
+
+  <!-- <input
+    matInput
+    type="text"
+    [(ngModel)]="newMovie.rating"
+    placeholder="Rating"
+  /> -->
+
+  <!-- <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <input matInput placeholder="Rating" [(ngModel)]="newMovie.rating" />
+  </mat-form-field> -->
+
+  <!-- <textarea
+    matInput
+    [(ngModel)]="newMovie.content"
+    placeholder="Description"
+  ></textarea> -->
+
+  <!-- <mat-form-field>
+    <mat-label>Content</mat-label>
+    <textarea
+      matInput
+      placeholder="Content"
+      [(ngModel)]="newMovie.content"
+    ></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="addMovie()">
+    Add movie
+  </button>
 </div>
 <div class="container">
   <app-task2-angular
@@ -42,9 +80,9 @@
     (Mindex)="deleteMovie($event)"
   >
   </app-task2-angular>
-</div>
+</div> -->
 
-<!-- <section class="container">
+  <!-- <section class="container">
   <app-task2-angular
     src="https://pbs.twimg.com/media/F3B4q0baEAgPLGj?format=jpg&name=large"
     moviename="Guntur Kaaram"
@@ -74,6 +112,17 @@
   ></app-task2-angular>
 </section> -->
 
-<!-- <app-counter></app-counter> -->
+  <!-- <app-counter></app-counter> -->
 
-<app-forms></app-forms>
+  <!-- <app-forms></app-forms> -->
+  <!-- </div> -->
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/forms">color-game</a></li>
+      <li><a routerLink="/movies">movies</a></li>
+      <li><a routerLink="/addmovie">addMovie</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

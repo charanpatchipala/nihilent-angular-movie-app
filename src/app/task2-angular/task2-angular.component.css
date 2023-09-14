@@ -3,11 +3,15 @@ body {
     place-content: center;
     min-height: 100vh;
 }
+mat-card{
+border-radius: 30px;
+}
 
  .moviecontent{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+padding: 1rem;
  }
 
 
@@ -17,7 +21,7 @@ body {
     border-radius: 30px;
     background-color: whitesmoke;
     width: 20rem;
-    height: 40rem;
+    /* height: 40rem; */
     overflow: hidden;
 }
 
@@ -38,5 +42,14 @@ body {
 .content{
    justify-content: center;
 }
+
+.deletebutton{
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    transform: translateX(250px);
+}
+
+
 
 

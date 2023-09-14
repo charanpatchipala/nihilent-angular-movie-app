@@ -1,0 +1,49 @@
+<div class="input">
+  <mat-form-field>
+    <mat-label>Poster</mat-label>
+    <input matInput placeholder="poster" [(ngModel)]="newMovie.src" />
+  </mat-form-field>
+  <!-- <input
+      matInput
+      type="text"
+      [(ngModel)]="newMovie.moviename"
+      placeholder="Movie Name"
+      required
+    /> -->
+  <mat-form-field>
+    <mat-label>Movie Name</mat-label>
+    <input matInput placeholder="Movie name" [(ngModel)]="newMovie.moviename" />
+  </mat-form-field>
+
+  <!-- <input
+      matInput
+      type="text"
+      [(ngModel)]="newMovie.rating"
+      placeholder="Rating"
+    /> -->
+
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <input matInput placeholder="Rating" [(ngModel)]="newMovie.rating" />
+  </mat-form-field>
+
+  <!-- <textarea
+      matInput
+      [(ngModel)]="newMovie.content"
+      placeholder="Description"
+    ></textarea> -->
+
+  <mat-form-field>
+    <mat-label>Content</mat-label>
+    <textarea
+      matInput
+      placeholder="Content"
+      [(ngModel)]="newMovie.content"
+    ></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="addMovie()">
+    {{ "Add movie" | uppercase }}
+    {{ 49 | currency : "INR" }}
+  </button>
+</div>

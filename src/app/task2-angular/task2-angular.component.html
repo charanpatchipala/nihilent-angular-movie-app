@@ -1,12 +1,19 @@
-<div class="moviecard">
-  <img src="{{ src }}" alt="Movie-poster" class="poster" />
-  <div class="moviecontent">
-    <div class="mname">
-      <span class="name">{{ moviename }}</span>
-      <span class="name">⭐{{ rating }}</span>
+<mat-card>
+  <div class="moviecard">
+    <img src="{{ src }}" alt="Movie-poster" class="poster" />
+    <div class="moviecontent">
+      <div class="mname">
+        <span class="name">{{ moviename }}</span>
+        <span class="name"> </span>
+        <span class="name">⭐{{ rating }}</span>
+      </div>
+      <p class="content">{{ content }}</p>
+      <app-counter></app-counter>
+
+      <button class="deletebutton" mat-fab color="green" (click)="delMovie()">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
-    <p class="content">{{ content }}</p>
-    <app-counter></app-counter>
+    <!-- <button (click)="delMovie()">Delete Movie</button> -->
   </div>
-  <button (click)="delMovie()">Delete Movie</button>
-</div>
+</mat-card>
