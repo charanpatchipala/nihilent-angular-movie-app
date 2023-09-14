@@ -9,6 +9,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule } from '@angular/forms';
 import { BoxComponent } from './box/box.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { BoxComponent } from './box/box.component';
     FormsComponent,
     BoxComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
