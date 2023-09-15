@@ -17,11 +17,11 @@ export class Task2AngularComponent {
     this.Mindex.emit(this.idx);
   }
 
-  showResult() {
-    let showLess = true;
-  }
+  // showResult() {
+  //   let showLess = true;
+  // }
 
-  hideResult() {
-    let showLess = false;
-  }
+  // hideResult() {
+  //   let showLess = false;
+  // }
 }
