@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -7,13 +7,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent {
-  count = 1;
+  @Input() count = 1;
+  @Input() dcount = 1;
+
+  @Output() likeCount = new EventEmitter<number>();
+  @Output() dislikeCount = new EventEmitter<number>();
   increment() {
     this.count++;
+    this.likeCount.emit(this.count);
   }
-  dcount = 1;
   decrement() {
     this.dcount++;
+    this.dislikeCount.emit(this.dcount);
   }
   totalcount = 100;
   get finalcount() {

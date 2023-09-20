@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsComponent } from './forms/forms.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent, pathMatch: 'full' },
+  { path: 'home', component: WelcomeComponent },
   { path: 'forms', component: FormsComponent },
   // {
   //   path: 'movies',
@@ -26,6 +28,7 @@ const routes: Routes = [
     path: 'movies',
     loadChildren: () =>
       import('./movies/movies.module').then((m) => m.MoviesModule),
+    canActivate: [authGuard],
   },
   { path: '**', component: NotFoundComponent },
 ];

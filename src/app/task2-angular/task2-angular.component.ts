@@ -17,6 +17,9 @@ export class Task2AngularComponent {
     summary: '',
     id: '',
     trailer: '',
+    like: 0,
+    dislike: 0,
+    releaseyear: '',
   };
   // @Input() src = '';
   // @Input() moviename = '';
@@ -41,6 +44,17 @@ export class Task2AngularComponent {
       console.log('Movie deleted successfully');
       this.rmvmovie.emit();
     });
+  }
+
+  updateDislikes(dlcount: number) {
+    this.movie = { ...this.movie, dislike: dlcount };
+    this.movieService
+      .updateMovie(this.movie, this.movie.id)
+      .subscribe(() => {});
+  }
+  updateLikes(lcount: number) {
+    this.movie = { ...this.movie, like: lcount };
+    this.movieService.updateMovie(this.movie, this.movie.id).subscribe();
   }
   editMovie() {
     this.router.navigate(['/movies/edit', this.movie.id]);

@@ -60,6 +60,7 @@
         Please provide longer summary 😁
       </mat-error>
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Trailer</mat-label>
       <input matInput formControlName="trailer" placeholder="Ex. Cool movie" />
@@ -75,6 +76,17 @@
         Please provide valid URL 🎊
       </mat-error>
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput formControlName="releaseyear" [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker
+    ></mat-form-field>
 
     <button
       [disabled]="movieForm.invalid"

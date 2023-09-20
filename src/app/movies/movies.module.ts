@@ -19,6 +19,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BoxComponent } from '../box/box.component';
 import { CounterComponent } from '../counter/counter.component';
 import { FormsComponent } from '../forms/forms.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { FormsComponent } from '../forms/forms.component';
   imports: [
     CommonModule,
     MoviesRoutingModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
     MatIconModule,
@@ -40,6 +44,8 @@ import { FormsComponent } from '../forms/forms.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
 })
 export class MoviesModule {}

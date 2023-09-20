@@ -21,6 +21,7 @@ export class AddMovieFormComponent {
       ],
     ],
     summary: ['', [Validators.required, Validators.minLength(20)]],
+    releaseyear: ['', [Validators.required]],
     trailer: [
       '',
       [

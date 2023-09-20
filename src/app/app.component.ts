@@ -6,6 +6,9 @@ type Movie = {
   rating: number;
   summary: string;
   trailer: string;
+  like: number;
+  dislike: number;
+  releaseyear: string;
 };
 @Component({
   selector: 'app-root',

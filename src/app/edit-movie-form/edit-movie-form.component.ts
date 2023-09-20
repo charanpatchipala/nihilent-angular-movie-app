@@ -19,6 +19,9 @@ export class EditMovieFormComponent {
     rating: 0,
     summary: '',
     trailer: '',
+    like: 0,
+    dislike: 0,
+    releaseyear: '',
   };
 
   movieForm = this.fb.group({

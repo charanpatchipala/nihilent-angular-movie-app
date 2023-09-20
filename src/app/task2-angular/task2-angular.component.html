@@ -15,9 +15,14 @@
         </button>
         <span class="name">⭐{{ movie.rating }}</span>
       </div>
-
+      <em>{{ movie.releaseyear | date : "MMMM" }}</em>
       <p *ngIf="show" class="content">{{ movie.summary }}</p>
-      <app-counter></app-counter>
+      <app-counter
+        [count]="movie.like"
+        [dcount]="movie.dislike"
+        (likeCount)="updateLikes($event)"
+        (dislikeCount)="updateDislikes($event)"
+      ></app-counter>
       <span class="crudbuttons">
         <button
           class="deletebutton"
