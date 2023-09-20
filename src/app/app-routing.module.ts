@@ -1,21 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsComponent } from './forms/forms.component';
-import { MoviesListComponent } from './movies-list/movies-list.component';
-import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MovieDetailsPageComponent } from './movie-details-page/movie-details-page.component';
-import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent, pathMatch: 'full' },
   { path: 'forms', component: FormsComponent },
-  { path: 'movies', component: MoviesListComponent },
+  // {
+  //   path: 'movies',
+  //   children: [
+  //     { path: '', component: MoviesListComponent, pathMatch: 'full' },
+  //     { path: 'add', component: AddMovieFormComponent },
+  //     { path: 'edit/:id', component: EditMovieFormComponent },
+  //     { path: ':id', component: MovieDetailsPageComponent },
+  //   ],
+  // },
+  // { path: 'movies', component: MoviesListComponent },
   { path: 'films', redirectTo: '/movies', pathMatch: 'full' },
-  { path: 'addmovie', component: AddMovieFormComponent },
-  { path: 'movies/:id', component: MovieDetailsPageComponent },
-  { path: 'movies/edit/:id', component: EditMovieFormComponent },
+  // { path: 'addmovie', component: AddMovieFormComponent },
+  // { path: 'movies/:id', component: MovieDetailsPageComponent },
+  // { path: 'movies/edit/:id', component: EditMovieFormComponent },
+
+  {
+    path: 'movies',
+    loadChildren: () =>
+      import('./movies/movies.module').then((m) => m.MoviesModule),
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

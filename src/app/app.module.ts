@@ -26,14 +26,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   declarations: [
     AppComponent,
     Task1AngularComponent,
-    Task2AngularComponent,
-    CounterComponent,
     FormsComponent,
     BoxComponent,
-    MoviesListComponent,
-    AddMovieFormComponent,
-    MovieDetailsPageComponent,
-    EditMovieFormComponent,
     NotFoundComponent,
   ],
   imports: [
