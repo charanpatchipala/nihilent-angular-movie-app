@@ -1,49 +1,144 @@
-<div class="input">
+<!-- (submit) will refresh the browser -->
+<form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-movie-form">
+  <div class="input">
+    <marquee><h2>Add Movie</h2></marquee>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Ex. Vikram" />
+
+      <mat-error *ngIf="name?.touched && name?.hasError('required')">
+        Why not fill this field 😉?
+      </mat-error>
+      <mat-error *ngIf="name?.touched && name?.hasError('minlength')">
+        Please provide full movie name 😁
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Rating</mat-label>
+      <input matInput formControlName="rating" placeholder="Ex. 7" />
+
+      <mat-error *ngIf="rating?.touched && rating?.hasError('required')">
+        Why not fill this field 😉?
+      </mat-error>
+
+      <mat-error
+        *ngIf="
+          rating?.touched &&
+          (rating?.hasError('min') || rating?.hasError('max'))
+        "
+      >
+        Rating must be 0 to 10
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Poster</mat-label>
+      <input
+        matInput
+        formControlName="poster"
+        placeholder="Ex. http://img.com"
+      />
+      <mat-error *ngIf="poster?.touched && poster?.hasError('required')">
+        Why not fill this field 😉?
+      </mat-error>
+      <mat-error *ngIf="poster?.touched && poster?.hasError('minlength')">
+        Please provide longer poster URL 😁
+      </mat-error>
+
+      <mat-error *ngIf="poster?.touched && poster?.hasError('pattern')">
+        Please provide valid URL 🎊
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Summary</mat-label>
+      <input matInput formControlName="summary" placeholder="Ex. Cool movie" />
+
+      <mat-error *ngIf="summary?.touched && summary?.hasError('required')">
+        Why not fill this field 😉?
+      </mat-error>
+      <mat-error *ngIf="summary?.touched && summary?.hasError('minlength')">
+        Please provide longer summary 😁
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Trailer</mat-label>
+      <input matInput formControlName="trailer" placeholder="Ex. Cool movie" />
+
+      <mat-error *ngIf="trailer?.touched && trailer?.hasError('required')">
+        Why not fill this field 😉?
+      </mat-error>
+      <mat-error *ngIf="trailer?.touched && trailer?.hasError('minlength')">
+        Please provide longer trailer url 😁
+      </mat-error>
+
+      <mat-error *ngIf="trailer?.touched && trailer?.hasError('pattern')">
+        Please provide valid URL 🎊
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      [disabled]="movieForm.invalid"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="add"
+      ></mat-icon>
+      {{ "Add Movie" | uppercase }}
+    </button>
+  </div>
+</form>
+
+<pre>
+  {{ movieForm.value | json }}
+</pre>
+
+<!-- <div class="input">
   <mat-form-field>
     <mat-label>Poster</mat-label>
-    <input matInput placeholder="poster" [(ngModel)]="newMovie.src" />
-  </mat-form-field>
-  <!-- <input
+    <input matInput placeholder="poster" [(ngModel)]="src" />
+  </mat-form-field> -->
+<!-- <input
       matInput
       type="text"
       [(ngModel)]="newMovie.moviename"
       placeholder="Movie Name"
       required
     /> -->
-  <mat-form-field>
+<!-- <mat-form-field>
     <mat-label>Movie Name</mat-label>
-    <input matInput placeholder="Movie name" [(ngModel)]="newMovie.moviename" />
-  </mat-form-field>
+    <input matInput placeholder="Movie name" [(ngModel)]="moviename" />
+  </mat-form-field> -->
 
-  <!-- <input
+<!-- <input
       matInput
       type="text"
       [(ngModel)]="newMovie.rating"
       placeholder="Rating"
     /> -->
-
+<!-- 
   <mat-form-field>
     <mat-label>Rating</mat-label>
-    <input matInput placeholder="Rating" [(ngModel)]="newMovie.rating" />
-  </mat-form-field>
+    <input matInput placeholder="Rating" [(ngModel)]="rating" />
+  </mat-form-field> -->
 
-  <!-- <textarea
+<!-- <textarea
       matInput
       [(ngModel)]="newMovie.content"
       placeholder="Description"
     ></textarea> -->
 
-  <mat-form-field>
+<!-- <mat-form-field>
     <mat-label>Content</mat-label>
-    <textarea
-      matInput
-      placeholder="Content"
-      [(ngModel)]="newMovie.content"
-    ></textarea>
+    <textarea matInput placeholder="Content" [(ngModel)]="content"></textarea>
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="addMovie()">
     {{ "Add movie" | uppercase }}
     {{ 49 | currency : "INR" }}
   </button>
-</div>
+</div> -->
+<!-- </form> -->

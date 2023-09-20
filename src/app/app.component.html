@@ -116,13 +116,27 @@
 
   <!-- <app-forms></app-forms> -->
   <!-- </div> -->
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/forms">color-game</a></li>
-      <li><a routerLink="/movies">movies</a></li>
-      <li><a routerLink="/addmovie">addMovie</a></li>
-    </ul>
+  <header>
+    <nav>
+      <mat-toolbar color="primary">
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/forms">Color Game</button>
+        <button mat-button routerLink="/movies">Movies</button>
+        <button mat-button routerLink="/addmovie">Add Movie</button>
+      </mat-toolbar>
+    </nav>
+  </header>
+
+  <section class="router-container">
+    <router-outlet></router-outlet>
+  </section>
+
+  <!-- <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/forms">color-game</a>
+    <a routerLink="/movies">movies</a>
+    <a routerLink="/addmovie">addMovie</a>
   </nav>
   <router-outlet></router-outlet>
+</div> -->
 </div>

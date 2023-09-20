@@ -43,12 +43,30 @@ padding: 1rem;
    justify-content: center;
 }
 
+.info{
+    border: 0;
+}
+
+.crudbuttons{
+    display: flex;
+    justify-content: space-between;
+}
+
 .deletebutton{
     width: 40px;
     height: 40px;
-    background-color: aqua;
-    transform: translateX(250px);
+    /* background-color: aqua; */
+    /* transform: translateX(250px); */
 }
+
+.editbutton{
+    width: 40px;
+    height: 40px; 
+    /* background-color: black; */
+    /* transform: translateX(200px) translateY(-38px); */
+}
+
+
 
 
 

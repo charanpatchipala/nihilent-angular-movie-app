@@ -1,0 +1,29 @@
+<!-- <h1>movie id is {{ id }}</h1> -->
+<div class="movietrailercard">
+  <iframe
+    width="720"
+    height="380"
+    [src]="movie.trailer"
+    title="Jawan | Official Hindi Trailer | Shah Rukh Khan | Atlee | Nayanthara | Vijay S | Deepika P | Anirudh"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+
+  <!-- <img src="{{ movie.trailer }}" alt="Movie-poster" class="poster" /> -->
+  <div class="moviecontent">
+    <div class="mname">
+      <span class="name">{{ movie.name }}</span>
+      <button (click)="toggle()" mat-icon-button aria-label="Expand Less">
+        <mat-icon *ngIf="show; else moreIcon">expand_less</mat-icon>
+        <ng-template #moreIcon>
+          <mat-icon>expand_more</mat-icon>
+        </ng-template>
+      </button>
+      <span class="name">⭐{{ movie.rating }}</span>
+    </div>
+
+    <p *ngIf="show" class="content">{{ movie.summary }}</p>
+    <app-counter></app-counter>
+  </div>
+</div>

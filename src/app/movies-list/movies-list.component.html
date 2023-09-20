@@ -56,17 +56,17 @@
 </div> -->
   <div class="container">
     <app-task2-angular
-      *ngFor="let movie of movies; let i = index"
-      [src]="movie.src"
-      [moviename]="movie.moviename"
-      [rating]="movie.rating"
-      [content]="movie.content"
-      [idx]="i"
-      (Mindex)="deleteMovie($event)"
+      *ngFor="let movie of movies"
+      [movie]="movie"
+      (rmvmovie)="loadMoviesData()"
     >
     </app-task2-angular>
   </div>
-
+  <!-- (Mindex)="deleteMovie($event)" -->
+  <!-- [src]="movie.src"
+      [moviename]="movie.moviename"
+      [rating]="movie.rating"
+      [content]="movie.content" -->
   <!-- <section class="container">
     <app-task2-angular
       src="https://pbs.twimg.com/media/F3B4q0baEAgPLGj?format=jpg&name=large"

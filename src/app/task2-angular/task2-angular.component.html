@@ -1,17 +1,42 @@
 <mat-card>
   <div class="moviecard">
-    <img src="{{ src }}" alt="Movie-poster" class="poster" />
+    <img src="{{ movie.poster }}" alt="Movie-poster" class="poster" />
     <div class="moviecontent">
       <div class="mname">
-        <span class="name">{{ moviename }}</span>
-        <span class="name">⭐{{ rating }}</span>
+        <span class="name">{{ movie.name }}</span>
+        <button (click)="toggle()" mat-icon-button aria-label="Expand Less">
+          <mat-icon *ngIf="show; else moreIcon">expand_less</mat-icon>
+          <ng-template #moreIcon>
+            <mat-icon>expand_more</mat-icon>
+          </ng-template>
+        </button>
+        <button class="info" (click)="getdetails()">
+          <mat-icon>info</mat-icon>
+        </button>
+        <span class="name">⭐{{ movie.rating }}</span>
       </div>
-      <p class="content">{{ content }}</p>
-      <app-counter></app-counter>
 
-      <button class="deletebutton" mat-fab color="green" (click)="delMovie()">
-        <mat-icon>delete</mat-icon>
-      </button>
+      <p *ngIf="show" class="content">{{ movie.summary }}</p>
+      <app-counter></app-counter>
+      <span class="crudbuttons">
+        <button
+          class="deletebutton"
+          mat-icon-button
+          color="warn"
+          (click)="deleteMovie()"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button
+          class="editbutton"
+          mat-icon-button
+          color="primary"
+          (click)="editMovie()"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </span>
     </div>
     <!-- <button (click)="delMovie()">Delete Movie</button> -->
   </div>

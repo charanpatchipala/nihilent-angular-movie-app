@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+type Movie = {
+  id: string;
+  poster: string;
+  name: string;
+  rating: number;
+  summary: string;
+  trailer: string;
+};
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+class AppComponent {
   title = 'nihilent-angular-movie-app';
   // name="charan reddy"
 
@@ -164,3 +172,4 @@ export class AppComponent {
     };
   }
 }
+export { Movie, AppComponent };

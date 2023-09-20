@@ -6,7 +6,7 @@ import { Task1AngularComponent } from './task1-angular/task1-angular.component';
 import { Task2AngularComponent } from './task2-angular/task2-angular.component';
 import { CounterComponent } from './counter/counter.component';
 import { FormsComponent } from './forms/forms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BoxComponent } from './box/box.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +17,11 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
 import { MatCardModule } from '@angular/material/card';
+import { MovieDetailsPageComponent } from './movie-details-page/movie-details-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +32,9 @@ import { MatCardModule } from '@angular/material/card';
     BoxComponent,
     MoviesListComponent,
     AddMovieFormComponent,
+    MovieDetailsPageComponent,
+    EditMovieFormComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,9 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatBadgeModule,
     MatCardModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

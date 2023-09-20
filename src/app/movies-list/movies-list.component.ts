@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MovieslistService } from '../movieslist.service';
+import { Movie } from '../app.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-movies-list',
@@ -7,35 +9,62 @@ import { MovieslistService } from '../movieslist.service';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent {
-  movies;
-  constructor(movieslist: MovieslistService) {
-    this.movies = movieslist.movies;
+  movies: Array<Movie> = [];
+  getMovieList: Subscription | any;
+
+  constructor(private movieService: MovieslistService) {
+    // this.movies = movieslist.getMovies();
   }
 
-  newMovie = {
-    src: '',
-    moviename: '',
-    rating: '',
-    content: '',
-  };
+  // ngOnInit() {
+  //   this.getMovieList = this.movieService
+  //     .getMovieListFromMockAPI()
+  //     .subscribe((mvList) => {
+  //       this.movies = mvList;
+  //     });
+  // }
 
-  deleteMovie(idx: number) {
+  ngOnInit() {
+    this.loadMoviesData();
+  }
+
+  loadMoviesData() {
+    this.getMovieList = this.movieService
+      .getMovieListFromMockAPI()
+      .subscribe((mvList) => {
+        this.movies = mvList;
+      });
+  }
+
+  ngOnDestroy() {
+    console.log('Destory');
+    this.getMovieList.unsubscribe();
+  }
+
+  // newMovie = {
+  //   src: '',
+  //   moviename: '',
+  //   rating: '',
+  //   content: '',
+  // };
+
+  delete(idx: number) {
     this.movies.splice(idx, 1);
   }
 
-  addMovie() {
-    // const movie = {
-    //   src: this.newMovie.src,
-    //   moviename: this.newMovie.moviename,
-    //   rating: this.newMovie.rating,
-    //   content: this.newMovie.content,
+  // addMovie() {
+  // const movie = {
+  //   src: this.newMovie.src,
+  //   moviename: this.newMovie.moviename,
+  //   rating: this.newMovie.rating,
+  //   content: this.newMovie.content,
 
-    this.movies.push(this.newMovie);
-    this.newMovie = {
-      src: '',
-      moviename: '',
-      rating: '',
-      content: '',
-    };
-  }
+  //   this.movieslist.setMovies(this.newMovie);
+  //   this.newMovie = {
+  //     src: '',
+  //     moviename: '',
+  //     rating: '',
+  //     content: '',
+  //   };
+  // }
 }
