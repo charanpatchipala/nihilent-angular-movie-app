@@ -30,6 +30,7 @@ export class EditMovieFormComponent {
     name: ['', [Validators.required, Validators.minLength(5)]],
     featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
+    releaseyear: ['', [Validators.required]],
     poster: [
       '',
       [
