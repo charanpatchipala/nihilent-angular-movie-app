@@ -2,9 +2,21 @@ body {
     display: grid;
     place-content: center;
     min-height: 100vh;
+    position: relative;
 }
 mat-card{
 border-radius: 30px;
+}
+
+.moviebadge{
+    background:orangered;
+    color: white;
+   position: absolute; 
+   padding: 0.5rem 1rem;
+   top: 10px;
+   right:0px;
+   transform: translateX(50%);
+   border-radius: 0.5rem;
 }
 
  .moviecontent{

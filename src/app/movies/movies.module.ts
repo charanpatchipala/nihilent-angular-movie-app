@@ -22,6 +22,7 @@ import { FormsComponent } from '../forms/forms.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSlideToggleModule,
   ],
 })
 export class MoviesModule {}

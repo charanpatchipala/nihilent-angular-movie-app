@@ -13,6 +13,7 @@ export class Task2AngularComponent {
   @Input() movie: Movie = {
     poster: '',
     name: '',
+    featured: false,
     rating: 9,
     summary: '',
     id: '',

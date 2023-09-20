@@ -1,6 +1,7 @@
 <mat-card>
   <div class="moviecard">
     <img src="{{ movie.poster }}" alt="Movie-poster" class="poster" />
+    <p *ngIf="movie.featured" class="moviebadge">Featured</p>
     <div class="moviecontent">
       <div class="mname">
         <span class="name">{{ movie.name }}</span>

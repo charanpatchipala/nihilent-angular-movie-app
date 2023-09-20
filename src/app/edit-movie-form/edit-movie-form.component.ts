@@ -16,6 +16,7 @@ export class EditMovieFormComponent {
     id: '',
     name: '',
     poster: '',
+    featured: false,
     rating: 0,
     summary: '',
     trailer: '',
@@ -27,6 +28,7 @@ export class EditMovieFormComponent {
   movieForm = this.fb.group({
     id: '',
     name: ['', [Validators.required, Validators.minLength(5)]],
+    featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
     poster: [
       '',

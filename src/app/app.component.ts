@@ -3,6 +3,7 @@ type Movie = {
   id: string;
   poster: string;
   name: string;
+  featured: boolean;
   rating: number;
   summary: string;
   trailer: string;
