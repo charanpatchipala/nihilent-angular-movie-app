@@ -1,11 +1,22 @@
-body {
+/* body {
     display: grid;
     place-content: center;
     min-height: 100vh;
     position: relative;
-}
+} */
 mat-card{
 border-radius: 30px;
+}
+
+.moviecard {
+    justify-content: center;
+    /* border: 2px solid black; */
+    border-radius: 30px;
+    background-color: whitesmoke;
+    width: 25rem;
+    /* height: 40rem; */
+    overflow: hidden;
+    position: relative;
 }
 
 .moviebadge{
@@ -15,7 +26,7 @@ border-radius: 30px;
    padding: 0.5rem 1rem;
    top: 10px;
    right:0px;
-   transform: translateX(50%);
+   /* transform: translateX(50%); */
    border-radius: 0.5rem;
 }
 
@@ -27,15 +38,7 @@ padding: 1rem;
  }
 
 
-.moviecard {
-    justify-content: center;
-    /* border: 2px solid black; */
-    border-radius: 30px;
-    background-color: whitesmoke;
-    width: 20rem;
-    /* height: 40rem; */
-    overflow: hidden;
-}
+
 
 .mname {
     display: flex;
@@ -50,6 +53,7 @@ padding: 1rem;
     height: 350px;
     object-fit: cover;
     object-position: top;
+    overflow: hidden;
 }
 .content{
    justify-content: center;
@@ -61,7 +65,7 @@ padding: 1rem;
 
 .crudbuttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .deletebutton{

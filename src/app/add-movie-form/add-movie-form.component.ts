@@ -23,6 +23,8 @@ export class AddMovieFormComponent {
     ],
     summary: ['', [Validators.required, Validators.minLength(20)]],
     releaseyear: ['', [Validators.required]],
+    like: [0],
+    dislike: [0],
     trailer: [
       '',
       [

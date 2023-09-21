@@ -128,6 +128,12 @@ export class MovieslistService {
     );
   }
 
+  searchMovieList(name: string) {
+    return this.http.get<Movie[]>(
+      `https://64f6f41e9d7754084952d8a0.mockapi.io/cricket?search=${name}`
+    );
+  }
+
   getMovieById(id: string) {
     return this.http.get<Movie>(
       `https://64f6f41e9d7754084952d8a0.mockapi.io/cricket/${id}`

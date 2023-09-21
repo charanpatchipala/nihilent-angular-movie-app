@@ -1,3 +1,16 @@
+<form [formGroup]="searchForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search Movie</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      formControlName="search"
+      type="text"
+      matInput
+      placeholder="Ex. Vikram"
+    />
+  </mat-form-field>
+</form>
+
 <div class="input">
   <!-- <input
       matInput
