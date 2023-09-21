@@ -16,7 +16,7 @@
         </button>
         <span class="name">⭐{{ movie.rating }}</span>
       </div>
-      <em>{{ movie.releaseyear | date : "MMMM YYYY" }}</em>
+      <em>{{ movie.releaseYear | date : "MMMM YYYY" }}</em>
       <p *ngIf="show" class="content">{{ movie.summary }}</p>
       <app-counter
         [count]="movie.like"

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../app.component';
 import { MovieslistService } from '../movieslist.service';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { ENTER, COMMA } from '@angular/cdk/keycodes';
+import { LANGUAGES, GENRES } from '../movies-list/global';
 
 @Component({
   selector: 'app-edit-movie-form',
@@ -22,8 +25,18 @@ export class EditMovieFormComponent {
     trailer: '',
     like: 0,
     dislike: 0,
-    releaseyear: '',
+    releaseYear: '',
+    languages: [''],
+    cast: [''],
+    genres: [''],
+    censorRating: '',
   };
+
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+
+  languages = LANGUAGES;
+
+  genres = GENRES;
 
   movieForm = this.fb.group({
     id: '',
@@ -40,6 +53,10 @@ export class EditMovieFormComponent {
       ],
     ],
     summary: ['', [Validators.required, Validators.minLength(20)]],
+    censorRating: ['', [Validators.required]],
+    genres: [[''], [Validators.required]],
+    languages: [[''], [Validators.required]],
+    cast: this.fb.array(['']),
     trailer: [
       '',
       [
@@ -65,6 +82,23 @@ export class EditMovieFormComponent {
       console.log(mv);
       this.movieForm.patchValue(mv);
     });
+  }
+
+  get cast() {
+    return this.movieForm.get('cast') as FormArray;
+  }
+
+  addCastName(event: MatChipInputEvent) {
+    const name = (event.value || '').trim();
+    if (name) {
+      this.cast.push(this.fb.control(name));
+    }
+
+    event.chipInput!.clear();
+  }
+
+  removeCastName(index: number) {
+    this.cast.removeAt(index);
   }
 
   get name() {

@@ -4,6 +4,7 @@ import { MovieslistService } from '../movieslist.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Movie } from '../app.component';
 import { Subscription } from 'rxjs';
+import { LANGUAGES, GENRES } from '../movies-list/global';
 
 @Component({
   selector: 'app-movie-details-page',
@@ -56,4 +57,16 @@ export class MovieDetailsPageComponent {
   //   console.log('Destory');
   //   this.getMovieList.unsubscribe();
   // }
+
+  getLabelLanguages(movie: any) {
+    return movie.languages?.map(
+      (lang: string) => LANGUAGES.find((data) => data.value === lang)?.label
+    );
+  }
+
+  getLabelGenres(movie: any) {
+    return movie.genres?.map(
+      (lang: string) => GENRES.find((data) => data.value === lang)?.label
+    );
+  }
 }

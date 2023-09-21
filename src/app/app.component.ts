@@ -9,7 +9,11 @@ type Movie = {
   trailer: string;
   like: number;
   dislike: number;
-  releaseyear: string;
+  releaseYear: string;
+  languages: Array<string>;
+  cast: Array<string>;
+  genres: Array<string>;
+  censorRating: string;
 };
 @Component({
   selector: 'app-root',

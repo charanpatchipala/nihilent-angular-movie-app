@@ -1,12 +1,8 @@
-/* body{
-    display: grid;
-    place-content: center;
-    min-height: 100vh;
-} */
-
-.add-movie-form{
-    display: grid;
-    place-content: center;
-    /* flex-direction: column;
-    justify-content: center; */
-}
+.add-movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 20rem;
+    margin: 10px auto;
+    margin-bottom: 1rem;
+  }

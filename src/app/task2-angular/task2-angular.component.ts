@@ -21,7 +21,11 @@ export class Task2AngularComponent {
     trailer: '',
     like: 0,
     dislike: 0,
-    releaseyear: '',
+    releaseYear: '',
+    languages: [''],
+    cast: [''],
+    genres: [''],
+    censorRating: '',
   };
   // @Input() src = '';
   // @Input() moviename = '';
