@@ -20,12 +20,15 @@
           <mat-icon>expand_more</mat-icon>
         </ng-template>
       </button>
+
       <div class="movie-genre-container">
         <mat-icon>sell</mat-icon>
         <p>{{ getLabelGenres(movie)?.join(" · ") }}</p>
       </div>
+
       <span class="name">⭐{{ movie.rating }}</span>
     </div>
+
     <div class="movie-extra-detail">
       <em>{{ movie?.releaseYear | date : "MMM YYYY" }}</em>
       <mat-chip>{{ movie.censorRating }}</mat-chip>
@@ -36,6 +39,7 @@
         </p>
       </div>
     </div>
+
     <p *ngIf="show" class="content">{{ movie.summary }}</p>
     <div class="movie-cast-container">
       <mat-icon>theater_comedy</mat-icon>

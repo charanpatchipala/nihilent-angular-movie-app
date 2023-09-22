@@ -43,7 +43,7 @@ export class EditMovieFormComponent {
     name: ['', [Validators.required, Validators.minLength(5)]],
     featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
-    releaseyear: ['', [Validators.required]],
+    releaseYear: ['', [Validators.required]],
     poster: [
       '',
       [
@@ -67,6 +67,7 @@ export class EditMovieFormComponent {
     ],
   });
 
+  // existingCast:string[]=['']
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
@@ -81,6 +82,11 @@ export class EditMovieFormComponent {
     this.movieService.getMovieById(this.id).subscribe((mv) => {
       console.log(mv);
       this.movieForm.patchValue(mv);
+
+      // this.cast.forEach((cast)=>this.existingCast.push(cast))
+      mv.cast.forEach((actor: string) => {
+        this.cast.push(this.fb.control(actor));
+      });
     });
   }
 
