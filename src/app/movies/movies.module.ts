@@ -31,6 +31,7 @@ import {
   MatChipInputEvent,
   MatChipsModule,
 } from '@angular/material/chips';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 @NgModule({
   declarations: [
     Task2AngularComponent,
@@ -59,6 +60,7 @@ import {
     MatSelectModule,
     MatListModule,
     MatChipsModule,
+    NgxStarRatingModule,
   ],
 })
 export class MoviesModule {}

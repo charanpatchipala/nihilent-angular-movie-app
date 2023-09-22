@@ -1,4 +1,9 @@
 <!-- (submit) will refresh the browser -->
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 <form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-movie-form">
   <div class="input">
     <marquee><h2>Add Movie</h2></marquee>
@@ -14,7 +19,8 @@
       </mat-error>
     </mat-form-field>
     <mat-slide-toggle formControlName="featured">Featured</mat-slide-toggle>
-    <mat-form-field>
+
+    <!-- <mat-form-field>
       <mat-label>Rating</mat-label>
       <input matInput formControlName="rating" placeholder="Ex. 7" />
 
@@ -30,7 +36,7 @@
       >
         Rating must be 0 to 10
       </mat-error>
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field>
       <mat-label>Poster</mat-label>
       <input
@@ -134,6 +140,9 @@
         />
       </mat-chip-grid>
     </mat-form-field>
+
+    <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
+
     <button
       [disabled]="movieForm.invalid"
       type="submit"
